@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Connected Spaces Dashboard</title>
+  </head>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
+    <script src="Build/Dashboard Web Prototype.loader.js"></script>
+    <script>
+      if (true) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
+
+        document.body.style.textAlign = "left";
+      }
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Dashboard Web Prototype.data",
+        frameworkUrl: "Build/Dashboard Web Prototype.framework.js",
+        codeUrl: "Build/Dashboard Web Prototype.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "ConnectedSpacesDashboard",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+      });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-storage-compat.js"></script>
+
+    <script>
+      const firebaseApp = firebase.initializeApp({
+    
+        apiKey: "AIzaSyCo-SR3fGcaDstQ4tSXc9gEo3uSyqDCiHE",
+    
+        authDomain: "cxs-help.firebaseapp.com",
+    
+        databaseURL: "https://cxs-help-default-rtdb.firebaseio.com",
+    
+        projectId: "cxs-help",
+    
+        storageBucket: "cxs-help.appspot.com",
+    
+        messagingSenderId: "159846673077",
+    
+        appId: "1:159846673077:web:8938ba93d91c976cdb6cfc",
+    
+        measurementId: "G-4WCWV10Z92"
+    
+      });
+      
+      const database = firebaseApp.database();
+      const storage = firebaseApp.storage();
+    </script>
+  </body>
+</html>

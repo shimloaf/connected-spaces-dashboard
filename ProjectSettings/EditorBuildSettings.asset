@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Login Scene.unity
+    guid: 5dfc90bc5e409144e8837b37b1782d6d
+  - enabled: 1
+    path: Assets/Scenes/Dashboard Customization.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Dashboard Ambient Display.unity
+    guid: a198bcfdccc3dc0419dbf23f6a94ade1
+  - enabled: 0
+    path: Assets/Scenes/Test Scene.unity
+    guid: 2e2a27107e06aea4c91162317a2492c7
+  m_configObjects: {}
